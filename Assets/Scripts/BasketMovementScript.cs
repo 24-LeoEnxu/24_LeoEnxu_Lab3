@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BasketMovementScript : MonoBehaviour
 {
@@ -42,6 +43,7 @@ public class BasketMovementScript : MonoBehaviour
         if (collision.gameObject.CompareTag("Unhealthy"))
         {
             Destroy(collision.gameObject);
+            SceneManager.LoadScene("LoseScene");
         }
     }
 }
