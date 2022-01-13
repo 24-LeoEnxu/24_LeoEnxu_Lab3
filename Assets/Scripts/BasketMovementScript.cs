@@ -35,6 +35,7 @@ public class BasketMovementScript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Healthy"))
         {
+            GameManager.score += 10;
             Destroy(collision.gameObject);
         }
 
