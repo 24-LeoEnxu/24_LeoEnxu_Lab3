@@ -6,11 +6,13 @@ using UnityEngine.SceneManagement;
 public class BasketMovementScript : MonoBehaviour
 {
     public float speed;
+    public AudioSource audioSource;
+    public AudioClip[] audioClip;
    
     // Start is called before the first frame update
     void Start()
     {
-        transform.GetComponent<Transform>();
+        
     }
 
     // Update is called once per frame
@@ -36,12 +38,16 @@ public class BasketMovementScript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Healthy"))
         {
+            audioSource.clip = audioClip[0];
+            audioSource.Play();
             GameManager.score += 10;
             Destroy(collision.gameObject);
         }
 
         if (collision.gameObject.CompareTag("Unhealthy"))
         {
+            audioSource.clip = audioClip[1];
+            audioSource.Play();
             Destroy(collision.gameObject);
             SceneManager.LoadScene("LoseScene");
         }
