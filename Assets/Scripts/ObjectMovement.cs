@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class ObjectMovement : MonoBehaviour
 {
-    private float ySpeed = -4f;
+    public static float ySpeed = 0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +16,7 @@ public class ObjectMovement : MonoBehaviour
     void Update()
     {
         transform.Translate(new Vector3(0f, ySpeed * Time.deltaTime, 0f));
+
         if (transform.position.y < -5)
         {
             Destroy(this.gameObject);

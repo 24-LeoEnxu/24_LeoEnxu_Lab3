@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
 
         if (score >= 100)
         {
-            SceneManager.LoadScene("WinScene");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 }
